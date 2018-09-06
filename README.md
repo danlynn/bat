@@ -8,7 +8,7 @@ See [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/)
 
 + [`0.6.1`,`latest` (0.6.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.6.1/Dockerfile)
 
-![bat logo](https://raw.githubusercontent.com/sharkdp/bat/master/doc/logo-header.svg?sanitize=true)
+![bat logo](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/bat_logo_header.svg?sanitize=true)
 
 ### Usage
 
