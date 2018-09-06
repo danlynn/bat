@@ -10,7 +10,7 @@ See the __*excellent*__ `bat` project that this docker container wraps at [https
 
 ![bat logo](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/bat_logo_header.svg?sanitize=true)
 
-### Usage
+## Usage
 
 Note that these examples all use the shell alias described in the installation section below.
 
@@ -48,7 +48,7 @@ Note that if you want to use a different theme as a default then you should prob
 export BAT_THEME=1337
 ```
 
-### Installation
+## Installation
 
 It is __*NOT*__ recommended, but this docker container can be ran as an executable container like:
 
