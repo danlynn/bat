@@ -32,11 +32,17 @@ Notice the `~`, `+`, `-` symbols in the left margin.  The wider `-` at the very 
 
 A number of different syntax highlighting themes are built-into `bat`.  To get a list of the available themes try `bat --list-themes`:
 
-![List themes]()
+![List themes](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/list_themes.png)
 
-To use a theme other than the default, either pass the `--theme` option on the command line -or- set the BAT_THEME env var:
+Notice how `bat` gives a sample of each theme listed. Nice!
 
-![Select theme]()
+To use a theme other than the default, either pass the `--theme` option on the command line -or- set the `BAT_THEME` env var on your local machine:
+
+![Select theme](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/select_theme1.png)
+
+![Select theme](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/select_theme2.png)
+
+Note that if you want to use a different theme as a default then you should probably just set the `BAT_THEME` env var in your ~/.bashrc file.
 
 ### Installation
 
