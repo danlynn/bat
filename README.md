@@ -10,21 +10,23 @@ See [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/)
 
 ![bat logo](https://raw.githubusercontent.com/sharkdp/bat/master/doc/logo-header.svg?sanitize=true)
 
-### usage
+### Usage
 
 Note that these examples all use the shell alias described in the installation section below.
 
 #### Syntax Highlighting
 
-bat supports syntax highlighting for a large number of programming and markup languages:
+`bat` supports syntax highlighting for a large number of programming and markup languages:
 
-![Syntax Highlighting Example]()
+![Syntax Highlighting Example](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/syntax_highlighting.png)
 
 #### Git Integration
 
-bat integrates with git to show modifications with respect to the index (see left side bar):
+`bat` integrates with git to show modifications with respect to the index (see left side bar):
 
-![Git Integration Example]()
+![Git Integration Example](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/git_integration.png)
+
+Notice the `~`, `+`, `-` symbols in the left margin.  The wider `-` at the very top indicates that somewhere further down in the listing there are modifications.
 
 #### Theme Selection
 
@@ -36,7 +38,7 @@ To use a theme other than the default, either pass the `--theme` option on the c
 
 ![Select theme]()
 
-### installation
+### Installation
 
 It is NOT recommended, but this docker container can be ran as an executable container like:
 
@@ -53,3 +55,21 @@ alias bat='docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat'
 ```
 
 From this point forward, any terminal windows that you open will be able to use the `bat` command as if it is installed directly on your system.
+
+### Docker-Specific Issues
+
+Since all dependencies associated with running `bat` are included in the docker container, you don't need to install anything on your local machine - except maybe the bash alias.
+
+This means that even though you might not have command-line git installed locally, the git support required to show the diffs still works because git is included in the docker container.
+
+If you get a message like:
+
+![Git Integration Example](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/no_such_file.png)
+
+Then you have probably tried to `bat` a file outside of the current directory tree.  The `bat` bash alias is setup to share the __*current*__ directory with the docker container so that it can access the files that you pass as arguments.  If you want to successfully `bat` the file in that example, you would first need to `cd ..` up a directory and then use the `bat` command:
+
+![Git Integration Example](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/dir_tree.png)
+
+Similarly, if you are trying to `bat` a file which is a soft link or is in a sub directory that is soft linked then it __*may*__ fail if those soft links are pointed at files which are not in the directory tree of the current directory.
+
+Taking these "gotcha's" into account, 99.9% of normal `bat` use cases will work just fine.  So, don't sweat it and enjoy `bat`!
