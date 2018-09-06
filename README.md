@@ -42,7 +42,11 @@ To use a theme other than the default, either pass the `--theme` option on the c
 
 ![Select theme](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/select_theme2.png)
 
-Note that if you want to use a different theme as a default then you should probably just set the `BAT_THEME` env var in your ~/.bashrc file.
+Note that if you want to use a different theme as a default then you should probably just set the `BAT_THEME` env var in your ~/.bashrc file like:
+
+```bash
+export BAT_THEME=1337
+```
 
 ### Installation
 
