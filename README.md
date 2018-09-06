@@ -1,8 +1,8 @@
-This image allows you to run the excellent `cat` command replacement `bat` within a container.  `bat` is a `cat` clone with wings! ...and Docker
+This docker image allows you to run the excellent `cat` command replacement `bat` within a container.  `bat` is a `cat` clone with wings! ...and Docker
 
-See [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/)
+See the __*excellent*__ `bat` project that this docker container wraps at [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/)
 
-![stars](https://img.shields.io/docker/stars/danlynn/ember-cli.svg) ![pulls](https://img.shields.io/docker/pulls/danlynn/ember-cli.svg) ![automated](https://img.shields.io/docker/automated/danlynn/ember-cli.svg) ![automated](https://img.shields.io/docker/build/danlynn/ember-cli.svg)
+![stars](https://img.shields.io/docker/stars/danlynn/bat.svg) ![pulls](https://img.shields.io/docker/pulls/danlynn/bat.svg) ![automated](https://img.shields.io/docker/automated/danlynn/bat.svg) ![automated](https://img.shields.io/docker/build/danlynn/bat.svg)
 
 ### Supported tags and respective `Dockerfile` links
 
