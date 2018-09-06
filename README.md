@@ -22,11 +22,9 @@ Note that these examples all use the shell alias described in the installation s
 
 #### Git Integration
 
-`bat` integrates with git to show modifications with respect to the index (see left side bar):
+`bat` integrates with git to show modifications with respect to the index.  Notice the `~`, `+`, `-` symbols in the left margin:
 
 ![Git Integration Example](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/git_integration.png)
-
-Notice the `~`, `+`, `-` symbols in the left margin.  The wider `-` at the very top indicates that somewhere further down in the listing there are modifications.
 
 #### Theme Selection
 
