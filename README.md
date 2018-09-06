@@ -50,21 +50,21 @@ export BAT_THEME=1337
 
 ## Installation
 
-It is __*NOT*__ recommended, but this docker container can be ran as an executable container like:
-
-```bash
-docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat myFile.js
-```
-
-__*INSTEAD*__, you should really consider creating a shell alias so that the command will run as if it is installed directly on your local system.
-
-Modify your `~/.bashrc` file to include the following line:
+Basically, you don't install __*anything*__.  Instead, all you have to do is add the following bash alias definition to your ~/.bashrc file:
 
 ```bash
 alias bat='docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat'
 ```
 
-From this point forward, any terminal windows that you open will be able to use the `bat` command as if it is installed directly on your system.
+This new alias will be available in any __*new*__ terminal tabs or windows that you open.
+
+Then, upon your __*first*__ use of the `bat` command, docker will download this image and then continue on to run your `bat` command.  Every subsequent `bat` command will simply run as expected since the docker container will have already been created.
+
+It is __*NOT*__ recommended, but if you really don't want to setup a bash alias then you can run the `bat` docker image as an executable container like:
+
+```bash
+docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat myFile.js
+```
 
 ### Docker-Specific Issues
 
