@@ -50,13 +50,13 @@ export BAT_THEME=1337
 
 ### Installation
 
-It is NOT recommended, but this docker container can be ran as an executable container like:
+It is __*NOT*__ recommended, but this docker container can be ran as an executable container like:
 
 ```bash
 docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat myFile.js
 ```
 
-INSTEAD, you should really consider creating a shell alias so that the command will run as if it is installed directly to your system.
+__*INSTEAD*__, you should really consider creating a shell alias so that the command will run as if it is installed directly on your local system.
 
 Modify your `~/.bashrc` file to include the following line:
 
