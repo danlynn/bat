@@ -6,6 +6,7 @@ See the __*excellent*__ `bat` project that this docker container wraps at [https
 
 ### Supported tags and respective `Dockerfile` links
 
++ [`0.7.1`,`latest` (0.7.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.7.1/Dockerfile)
 + [`0.6.1`,`latest` (0.6.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.6.1/Dockerfile)
 
 ![bat logo](https://raw.githubusercontent.com/danlynn/bat/master/README_assets/bat_logo_header.svg?sanitize=true)
@@ -46,12 +47,15 @@ Note that if you want to use a different theme as a default then you should prob
 export BAT_THEME=1337
 ```
 
+Similarly, you can put the BAT_STYLE and BAT_TABS env vars in your ~/.bashrc to provide defaults for the --style and --tabs options (see: [https://github.com/sharkdp/bat#customization](https://github.com/sharkdp/bat#customization)).
+
+
 ## Installation
 
 Basically, you don't install __*anything*__.  Instead, all you have to do is add the following bash alias definition to your ~/.bashrc file:
 
 ```bash
-alias bat='docker run -it --rm -e BAT_THEME -v "$(pwd):/myapp" danlynn/bat'
+alias bat='docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -v "$(pwd):/myapp" danlynn/bat'
 ```
 
 This new alias will be available in any __*new*__ terminal tabs or windows that you open.
