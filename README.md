@@ -6,7 +6,8 @@ See the __*excellent*__ `bat` project that this docker container wraps at [https
 
 ### Supported tags and respective `Dockerfile` links
 
-+ [`0.9.0`,`latest` (0.9.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.9.0/Dockerfile)
++ [`0.10.0`,`latest` (0.10.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.10.0/Dockerfile)
++ [`0.9.0` (0.9.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.9.0/Dockerfile)
 + [`0.7.1` (0.7.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.7.1/Dockerfile)
 + [`0.6.1` (0.6.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.6.1/Dockerfile)
 
@@ -82,13 +83,13 @@ Basically, you don't install __*anything*__.  Instead, all you have to do is cop
 function bat {
         if [[ $# -eq 1 && $1 =~ ^\.\. ]]; then
                 # handle ../../path when single arg
-                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(cd "$(dirname "$1")"; pwd):/myapp" danlynn/bat $(basename "$1")
+                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -e PAGER -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(cd "$(dirname "$1")"; pwd):/myapp" danlynn/bat $(basename "$1")
         elif [[ $# -eq 1 && $1 =~ ^\/ ]]; then
                 # handle ~/path -or- actual absolute paths when single arg
-                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(dirname "$1"):/myapp" danlynn/bat $(basename "$1")
+                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -e PAGER -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(dirname "$1"):/myapp" danlynn/bat $(basename "$1")
         else
                 # handle most everything else
-                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(pwd):/myapp" danlynn/bat $@
+                docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -e PAGER -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(pwd):/myapp" danlynn/bat $@
         fi
 }
 ```
@@ -100,7 +101,15 @@ Upon your __*first*__ use of the `bat` command, docker will automatically downlo
 It is __*NOT*__ recommended, but if you really don't want to setup a bash function then you can run the `bat` docker image as an executable container like:
 
 ```bash
-docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(pwd):/myapp" danlynn/bat myFile.js
+docker run -it --rm -e BAT_THEME -e BAT_STYLE -e BAT_TABS -e PAGER -v "$HOME/.config/bat/config:/root/.config/bat/config" -v "$(pwd):/myapp" danlynn/bat myFile.js
+```
+
+##  Updates
+
+To update to the latest version of the docker bat image, simply execute the following command.  If you are already on the latest version then nothing happens.  Otherwise, if there is an updated image available then it will be quickly downloaded and made available for your next use of the `bat` command.  After an update, it may be a good idea to review this README to see if the 'Installation' bash function has been tweaked.  It would be safe to simply copy/paste the 'Installation' bash function above into your local ~/.bashrc file after each update.
+
+```bash
+$ docker pull danlynn/bat
 ```
 
 ### Docker-Specific Issues
