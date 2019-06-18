@@ -6,7 +6,8 @@ See the __*excellent*__ `bat` project that this docker container wraps at [https
 
 ### Supported tags and respective `Dockerfile` links
 
-+ [`0.10.0`,`latest` (0.10.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.10.0/Dockerfile)
++ [`0.11.0`,`latest` (0.11.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.11.0/Dockerfile)
++ [`0.10.0` (0.10.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.10.0/Dockerfile)
 + [`0.9.0` (0.9.0/Dockerfile)](https://github.com/danlynn/bat/blob/0.9.0/Dockerfile)
 + [`0.7.1` (0.7.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.7.1/Dockerfile)
 + [`0.6.1` (0.6.1/Dockerfile)](https://github.com/danlynn/bat/blob/0.6.1/Dockerfile)
